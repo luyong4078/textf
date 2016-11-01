@@ -1,0 +1,145 @@
+/*登录login*/
+html, body{
+	background:#f5f5f5;
+	margin: 0;
+	padding: 0;	
+}
+ul, ol { list-style:none;  text-decoration: none;} 
+
+.login{
+	width:350px;
+	height:400px;
+	background:#fff;
+	margin:10px auto;
+	padding: 50px 250px 145px;
+}
+#text,#pass{
+	width: 100%;
+	height: 45px;
+	border: 1px solid #b0b0b0;
+	line-height: 45px;
+	text-align:center;
+	margin: 16px 0px;
+}
+.login_input1,.login_input2{
+	width: 333px;
+	height: 16px;
+	border: none;
+	outline:none;
+}
+#sub{
+	width: 100%;
+	height: 45px;
+	background: #d71921;
+	border: none;
+	color: white;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	cursor: pointer;
+	margin-bottom: 35px;
+}
+.fiel{
+	border: 0;
+	border-top: 1px solid #e0e0e0;
+}
+.legend{
+	font-size: 14px;
+	color: #b0b0b0;
+}
+.oth_type{
+	width: 100%;
+	margin-top: 10px;
+	text-align: center;
+	padding: 0 105px;
+}
+.oth_type_a{
+	width: 30px;
+	height: 30px;
+	background:#717171;
+	display: block;
+	border-radius: 50%;
+	margin: 0 10px;
+	float: left;
+}
+.oth_type_a:hover{
+	background: #137cc6;
+}
+.oth_type_alipay{
+	background: url(../imgs/icons_type.png) no-repeat;
+	background-position: -56px 5px;
+	width: 23px;
+	height: 25px;
+	display: block;
+	margin-left: 3px;
+}
+.oth_type_qq{
+	background: url(../imgs/icons_type.png) no-repeat;
+	background-position: -19px 5px;
+	width: 17px;
+	height: 25px;
+	display: block;
+	margin-left: 5px;
+}
+.oth_type_weibo{
+	background: url(../imgs/icons_type.png) no-repeat;
+	background-position: -35px 5px;
+	width: 20px;
+	height: 25px;
+	display: block;
+	margin-left: 3px;
+}
+.login_zm{
+	width: 100%;
+	margin-top: 70px;
+	text-align: center;
+	color: #b0b0b0; 
+}
+.login_zm a{ 
+	text-decoration: none; 
+	color: #b0b0b0; 
+	font-size: 14px;
+}
+.login_zm a:hover{color: red;}
+
+.call{
+	position: fixed;
+	right: 40px;
+	bottom: 10px;
+	padding-bottom: 73px;
+	z-index: 999;
+}
+.call_qq{
+	display: block;
+	width: 72px;
+	height: 73px;
+	margin-bottom: 1px;
+	cursor: pointer;
+	position: relative;
+	background: #fbb01f url(../imgs/r_qq.png) no-repeat;
+}
+.call_tel{
+	display: block;
+	width: 72px;
+	height: 73px;
+	margin-bottom: 1px;
+	cursor: pointer;
+	position: relative;
+	background:#d71921 url(../imgs/r_phone.png) no-repeat;
+}
+.call_qq:hover{
+	background: #820909 url(../imgs/r_qq.png) no-repeat;
+}
+.call_tel:hover{
+	background: #97070d url(../imgs/r_phone.png) no-repeat;
+}
+
+.footer3{
+	width: 100%;
+	height: 150px;
+	color: #b0b0b0; 
+	background: #f5f5f5;
+	text-align: center;
+}
+.footer3 p{
+	margin: 0;
+}
