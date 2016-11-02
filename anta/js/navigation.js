@@ -1,8 +1,7 @@
 
 ;
 $(function(){
-	//var $vertical=$(".vertical");
-	//var $vartical_child=$(".vertical_child");
+	  //1添加左侧垂直导航
 	var $goods=$(".goods");
 	
 	var $vertical=$("<div class='vertical' />").appendTo($goods);
@@ -14,15 +13,12 @@ $(function(){
 		$(this).find(".vertical").hide();
 	});
 	
-	
-	
-	//添加左侧垂直导航
 	var obj;
-	$.get("json/ver.json",function(str){
+	$.get("json/ver.json",function(str){  //1.1引入json文件
 		obj=str;
 		addContent(obj);
 	});
-	
+	  //添加一级导航菜单
 	function addContent(obj){
 		//console.log(obj)
 		for(var key in obj){
@@ -30,16 +26,18 @@ $(function(){
 			//console.log($div1)
 			//console.log($vertical)
 			var $vh4=$("<h4/>").appendTo($vertical_child);
+			$vh4.html(obj[key].title);
+			$vh4.attr({title:obj[key].title})
 			var $vp=$("<p/>").appendTo($vertical_child);
 			var arr=obj[key].catalog.split(" ");
 			for(var key in arr){
 				var $va=$("<a href='#' id='va' />");
 				$va.html(arr[key]+" ");
+				$va.attr({title:arr[key]})
 				$va.appendTo($vp);
 			};
 		};
-		
-		
+		//添加二级导航菜单
 		var ver_chi=document.getElementsByClassName("vertical_child");
 			//console.log(ver_chi);
 			var $ver_chi2=$(ver_chi[2]);
@@ -54,8 +52,10 @@ $(function(){
 			
 			$ver_chi3.hover(function(){
 				$(this).find(".ve_ch3_ri").show();
+				flag=false;
 			},function(){
 				$(this).find(".ve_ch3_ri").hide();
+				flag=true;
 			})
 			
 			var $vcri2=$("<div class='ve_ch2_ri' />").appendTo($ver_chi2);
@@ -65,20 +65,63 @@ $(function(){
 			$.get("json/vcri.json",function(str){
 				vobj=str;
 				addContver(vobj);
+				//console.log(vobj)
 			});
 			
 			function addContver(vobj){
-				var $vcridivl=$("<div class='vcridivl'  />").appendTo($vcri2);
-				var $vp1=$("<p/>").appendTo($vcridivl);
-				$vp1.html(vobj.nav1.sub1);
-				var $vp2=$("<p/>").appendTo($vcridivl);
-				$vp2.html(vobj.nav1.sub2);
-				var $vp3=$("<p/>").appendTo($vcridivl);
-				$vp3.html(vobj.nav1.sub3);
-				var $vcridivr=$("<div class='vcridivr' />").appendTo($vcri2);
-				var $vh5=$("<h5 class='vh5' />").appendTo($vcridivr);
-				$vh5.html(vobj.nav1.sub4);
-				var $vimg=("<img href='vobj.nav1.img' />")
+					var $vcridivl=$("<div class='vcridivl'  />").appendTo($vcri2);
+					var $vp1=$("<p/>").appendTo($vcridivl);
+					var arr1=vobj.nav1.sub1.split(" ");
+					var arr2=vobj.nav1.sub2.split(" ");
+					var arr3=vobj.nav1.sub3.split(" ");
+					//console.log(arr1)
+					for(var i in arr1){
+						var $va=$("<a href='#'/>").appendTo($vp1);
+						$va.html(arr1[i]+" ");
+						//$va
+					}
+					var $vp2=$("<p/>").appendTo($vcridivl);
+					var arr1=vobj.nav1.sub2.split(" ");
+					for(var i in arr2){
+						var $va=$("<a href='#'/>").appendTo($vp2);
+						$va.html(arr2[i]+" ");
+					}
+					var $vp3=$("<p/>").appendTo($vcridivl);
+					for(var i in arr3){
+						var $va=$("<a href='#'/>").appendTo($vp3);
+						$va.html(arr3[i]+" ");
+					}
+					var $vcridivr=$("<div class='vcridivr' />").appendTo($vcri2);
+					var $vh5=$("<h5 class='vh5' />").appendTo($vcridivr);
+					$vh5.html(vobj.nav1.sub4);
+					var $vimg=$("<img />").appendTo($vcridivr);
+					$vimg.attr({"src":vobj.nav1.img});
+					
+					var $vcridivl=$("<div class='vcridivl'  />").appendTo($vcri3);
+					var arr4=vobj.nav2.sub1.split(" ");
+					var arr5=vobj.nav2.sub2.split(" ");
+					var arr6=vobj.nav2.sub3.split(" ");
+					var $vp1=$("<p/>").appendTo($vcridivl);
+					for(var i in arr4){
+						var $va=$("<a href='#'/>").appendTo($vp1);
+						$va.html(arr4[i]+" ");
+					}
+					var $vp2=$("<p/>").appendTo($vcridivl);
+					for(var i in arr5){
+						var $va=$("<a href='#'/>").appendTo($vp2);
+						$va.html(arr5[i]+" ");
+					}
+					var $vp3=$("<p/>").appendTo($vcridivl);
+					for(var i in arr6){
+						var $va=$("<a href='#'/>").appendTo($vp3);
+						$va.html(arr6[i]+" ");
+					}
+					var $vcridivr=$("<div class='vcridivr' />").appendTo($vcri3);
+					var $vh5=$("<h5 class='vh5' />").appendTo($vcridivr);
+					$vh5.html(vobj.nav2.sub4);
+					var $vimg=$("<img />").appendTo($vcridivr);
+					$vimg.attr({"src":vobj.nav2.img});
+				
 				
 			}
 			
@@ -100,39 +143,57 @@ $(function(){
 				var $lias=$("<a href='#' id='lias'/>");
 				$lias.appendTo($lis[key]);
 				$lias.html(arr[key]+" ");
+				$lias.attr({title:arr[key]+"系列"});
 			};
 	};
+	
 
-		$lidiv=$(".lidiv");
-
-			$lis.hover(function(e){
-				console.log()
-				$lidiv.show();
-			},function(){
-				$lidiv.hide();
-			})
 		
-		
-			var obje;
-			$.get("json/list_child.json",function(str){
-				obje=str;
-				addContlis(obje);
-				//console.log(obje)
-			})
-			function addContlis(obje){
-				for(var key in obje){
-					$img=$("<img class='imgc'/>").appendTo($lidiv);
-					$div=$("<div class='ul_ci'/>").appendTo($lidiv);
-					$dtc=$("<dt class='dct'/>").appendTo($div)
-					$arr1=obje[key].title.split(" ");
-					//console.log(arr1)
-					//$dtc.html(arr.slice(1).join(" "))
-					//$img.css(href:"obje[key].title")
-				}
-			}
 			
-		
-		
+
+/*banner1*/
+		  //轮播图
+		var $bali=$("#bau1 li");
+		var $bali2=$("#shuffling  li")
+		var $baleft=$("#baleft");
+		var $baright=$("#baright");
+		var $banner=$(".banner");
+		var k=0;
+		//自动轮播
+		var timer=setInterval(fun1,3000);
+		//划动事件
+		$banner.hover(function(){
+			clearInterval(timer);
+		},function(){
+			timer=setInterval(fun1,3000);
+		});
+		//向左向右
+		$baleft.click(function(){
+			k--;
+			if(k==-1){
+				k=$bali.size()-1;
+			}
+			play(k);
+		});
+		$baright.click(fun1);
+		//点击轮播
+		$bali2.click(function(evt){
+			k=$(evt.target).index();
+			play(k);
+		});
+		//fun1
+		function fun1(){
+			k++;
+			if(k==$bali.size()){
+				k=0;
+			}
+			play(k);
+		}
+		function play(k){
+			$bali.eq(k).css("display","block").siblings().css("display","none");
+			$bali2.eq(k).css("background","#bf2627").siblings().css({background:""});
+			
+		}
 
 
 });

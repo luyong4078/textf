@@ -86,6 +86,7 @@ a:hover, a:active, a:focus { color:#ff8400; text-decoration: none; }
 				height: 34px;
 				float: left;
 				position: relative;
+				z-index: 5;
 			}
 			.nav ul li{
 				float: left;
@@ -159,6 +160,7 @@ a:hover, a:active, a:focus { color:#ff8400; text-decoration: none; }
 				position: relative;
 				color: white;
 				display: none;
+				z-index: 5;
 			}
 			.vertical_child{
 				width: 165px;
@@ -173,12 +175,13 @@ a:hover, a:active, a:focus { color:#ff8400; text-decoration: none; }
 			.ve_ch2_ri,.ve_ch3_ri{
 				width: 705px;
 				height: 180px;
-				background: #e6e6e6;
+				background: white;
 				padding: 20px;
 				position: relative;
 				left: 195px;
 				top: -120px;
 				position: relative;
+				opacity: 0.8;
 			}
 			.vcridivl{
 				width: 450px;
@@ -196,12 +199,13 @@ a:hover, a:active, a:focus { color:#ff8400; text-decoration: none; }
 				position: relative;
 				top: -165px;
 			}
-			.vcridivr h5{color: #525252;}
+			.vcridivr h5{color: #525252; margin-bottom: 10px;}
 			.vcridivl p{
 				height: 50px;
 				line-height: 80px;
-				color: #959595;
 			}
+			.vcridivl p a{color: #959595;}
+			.vcridivl p a:hover{color: red;}
 			/*.#lias{
 				position: fixed;
 				top: 5px;
@@ -236,20 +240,83 @@ a:hover, a:active, a:focus { color:#ff8400; text-decoration: none; }
 				border-bottom: 1px dashed #dfdfdf;
 				background: chartreuse;
 			}
+			
+			
 /*banner*/
-.banner{
-	width: 100%;
-	height: 480px;
-	background: coral;
-}
-
-.banner2{
-	width: 100%;
-	height: 275px;
-	background: #eeeee;
-	margin: 34px 87px;
-}
-
+			.banner{
+				width: 100%;
+				height: 480px;
+				position: relative;
+				overflow: hidden;
+				background: coral;
+				z-index: 0;
+			}
+			#bau1{
+				list-style:  none;
+				width: 100%;
+				position: absolute;
+			}
+			.banner ul li {
+				width: 100%;
+				height: 480px;
+				position: absolute;
+				cursor: pointer;
+			}
+			.banner ul li:nth-child(1){
+				background: url(../imgs/tps_1013.jpg) 50% 0 no-repeat;
+				display: block;
+			}
+			.banner ul li:nth-child(2){
+				background: url(../imgs/hot_1028.jpg) 50% 0 no-repeat;
+			}
+			.banner ul li:nth-child(3){
+				background: url(../imgs/yrf_1011.jpg) 50% 0 no-repeat;
+			}
+			.banner ul li:nth-child(4){
+				background: url(../imgs/nlh_95.jpg) 50% 0 no-repeat;
+			}
+			#baleft{
+				position: relative;
+				left: 50px;
+				top: 220px;
+				width: 23px;
+				height: 42px;
+				cursor: pointer;
+				background:url(../imgs/banner_l.png) no-repeat;
+			}
+			#baright{
+				position: relative;
+				left: 1220px;
+				top: 185px;
+				width: 23px;
+				height: 42px;
+				cursor: pointer;
+				background: url(../imgs/banner_r.png) no-repeat;
+			}
+			#shuffling  li{
+				float: left;
+				width: 140px;
+				height: 30px;
+				background: black;
+				opacity: 0.7;
+				left: 400px;
+				top: 365px;
+				text-align: center;
+				line-height: 30px;
+				position: relative;
+				margin-right: 1px;
+				color: white;
+				z-index: 5;
+				cursor:pointer;
+			}
+			
+			.banner2{
+				width: 100%;
+				height: 275px;
+				background: #eeeee;
+				margin: 34px 87px;
+			}
+			
 
 
 /*footer*/
